@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Acamovi"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Mapa de geolocalización"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mapas" />
+
+        <TextView
+            android:text="Rutas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/routesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Ruta 1: Acapulco Centro\n• Ruta 2: Zona Diamante\n• Ruta 3: Pie de la Cuesta\n• Ruta 4: Caleta - Caletilla\n• Ruta 5: Renacimiento - Costera"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>
