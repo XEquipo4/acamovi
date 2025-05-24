@@ -1,54 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5EFE4">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="20dp"
+    <!-- Mapa simplificado -->
+    <ImageView
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mapas"
+        android:layout_above="@+id/bottomSheet"/>
+
+    <!-- Panel inferior simplificado -->
+    <LinearLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:padding="16dp">
 
         <TextView
-            android:text="Acamovi"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="Mapa de geolocalización"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/mapas" />
-
-        <TextView
-            android:text="Rutas"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:id="@+id/routesTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="• Ruta 1: Acapulco Centro\n• Ruta 2: Zona Diamante\n• Ruta 3: Pie de la Cuesta\n• Ruta 4: Caleta - Caletilla\n• Ruta 5: Renacimiento - Costera"
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:layout_marginTop="10dp" />
+            android:text="Rutas Activas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#C95A50"/>
 
+        <!-- Lista simple de rutas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Ruta Centro (12 min)"
+                android:textSize="16sp"
+                android:textColor="#4BB5C1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Ruta Diamante (8 min)"
+                android:textSize="16sp"
+                android:textColor="#4BB5C1"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Ruta Costera (15 min)"
+                android:textSize="16sp"
+                android:textColor="#4BB5C1"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
     </LinearLayout>
-</ScrollView>
+
+    <!-- Botón flotante simplificado -->
+    <Button
+        android:id="@+id/btnLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi ubicación"
+        android:backgroundTint="#D9A637"
+        android:textColor="#FFFFFF"
+        android:layout_above="@id/bottomSheet"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"/>
+</RelativeLayout>
