@@ -1,119 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="32dp"
-    android:gravity="center_horizontal"
-    android:background="#F5EFE4">
+    android:background="#F5EFE4"
+    android:fillViewport="true"
+    android:padding="12dp"> <!-- Padding general reducido -->
 
-    <!-- Título principal -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registro"
-        android:textSize="28sp"
+        android:orientation="vertical"
+        android:padding="16dp"> <!-- Padding interno reducido -->
+
+        <!-- Logo más pequeño -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Títulos con texto más pequeño -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recarga tu tarjeta"
+            android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#D9A637"
-        android:layout_marginBottom="24dp"/>
-
-    <!-- Grupo para Nombre -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="20dp">
+        android:gravity="center"
+        android:layout_marginBottom="4dp"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre completo"
-            android:textSize="16sp"
-            android:textColor="#4BB5C1"
-            android:layout_marginBottom="8dp"/>
-
-        <EditText
-            android:id="@+id/etName"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:background="@drawable/edittext_background"
-            android:padding="16dp"
-            android:textColor="#333333"
-            android:textSize="16sp"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Método de pago con tarjeta"
+            android:textSize="16sp"
+        android:textColor="#C95A50"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Grupo para Email -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="20dp">
-
+        <!-- Monto de recarga -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo electrónico"
-            android:textSize="16sp"
-            android:textColor="#4BB5C1"
-            android:layout_marginBottom="8dp"/>
+            android:text="Monto a recargar"
+            android:textSize="14sp"
+        android:textColor="#4BB5C1"
+        android:layout_marginBottom="4dp"/>
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etAmount"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/edittext_background"
-            android:padding="16dp"
-            android:textColor="#333333"
-            android:textSize="16sp"/>
-    </LinearLayout>
+            android:layout_height="48dp"
+        android:hint="$100.00"
+        android:inputType="numberDecimal"
+        android:background="@drawable/edittext_background"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:textColor="#333333"/>
 
-    <!-- Grupo para Contraseña -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="32dp">
-
+        <!-- Número de tarjeta E-Dinar -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contraseña"
-            android:textSize="16sp"
+            android:text="Número de tarjeta E-Dinar"
+            android:textSize="14sp"
             android:textColor="#4BB5C1"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"/>
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etEdinarCardId"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:inputType="textPassword"
+            android:layout_height="48dp"
+            android:hint="Ej: ED123456789"
+            android:inputType="text"
             android:background="@drawable/edittext_background"
-            android:padding="16dp"
+            android:textSize="14sp"
+        android:padding="12dp"
+        android:textColor="#333333"/>
+
+        <!-- Datos de tarjeta de crédito/débito -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datos de la tarjeta de pago"
+            android:textSize="14sp"
+            android:textColor="#4BB5C1"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Número de tarjeta"
+            android:inputType="number"
+            android:background="@drawable/edittext_background"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:textColor="#333333"/>
+
+        <!-- Layout horizontal ajustado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+        android:weightSum="2">
+
+        <EditText
+            android:id="@+id/etExpiryDate"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="MM/AA"
+            android:inputType="number"
+            android:background="@drawable/edittext_background"
+            android:textSize="14sp"
+            android:padding="12dp"
             android:textColor="#333333"
-            android:textSize="16sp"/>
+            android:layout_marginEnd="6dp"/> <!-- Margen reducido -->
+
+        <EditText
+            android:id="@+id/etCvv"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="CVV"
+            android:inputType="number"
+            android:background="@drawable/edittext_background"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:textColor="#333333"/>
     </LinearLayout>
 
-    <!-- Botón de registro -->
+    <!-- Botón de pago más compacto -->
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnPay"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="Registrarse"
-        android:backgroundTint="#D9A637"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:elevation="4dp"/>
+        android:layout_height="48dp"
+    android:text="Realizar pago"
+    android:textSize="16sp"
+    android:backgroundTint="#D9A637"
+    android:textColor="#FFFFFF"
+    android:layout_marginTop="24dp"
+    android:elevation="2dp"/>
 
-    <!-- Enlace para login -->
+    <!-- Texto alternativo más pequeño -->
     <TextView
-        android:id="@+id/tvGoToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Ya tienes cuenta? Inicia sesión"
-        android:textColor="#82D1F7"
-        android:textSize="16sp"
-        android:layout_marginTop="24dp"
-        android:textStyle="bold"/>
+        android:text="¿Prefieres otro método de pago?"
+        android:textSize="12sp"
+    android:textColor="#82D1F7"
+    android:layout_gravity="center"
+    android:layout_marginTop="16dp"/> <!-- Margen reducido -->
 </LinearLayout>
+    </ScrollView>

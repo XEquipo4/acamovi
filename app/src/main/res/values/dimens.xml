@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tamaños estándar para iconos -->
+    <dimen name="icon_extra_small">16dp</dimen>
+    <dimen name="icon_small">20dp</dimen>
+    <dimen name="icon_medium">24dp</dimen>
+    <dimen name="icon_large">32dp</dimen>
+    <dimen name="icon_extra_large">48dp</dimen>
+    <!-- Agrega esta línea -->
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Tamaños para Floating Action Buttons -->
+    <dimen name="fab_small">48dp</dimen>
+    <dimen name="fab_normal">56dp</dimen>
+    <dimen name="fab_large">64dp</dimen>
+
+    <!-- Márgenes y padding -->
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+</resources>
